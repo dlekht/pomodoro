@@ -1,6 +1,10 @@
 # Overview
 A simple web application based on the Pomodoro technique to help you stay focused while studying or working. The app switches between 25-minute work sessions and 5-minute breaks and has a fun user interface.
 
+## Demo
+
+https://dlekht.github.io/pomodoro/
+
 ## Features
 
 - Switches automatically between work (25 minutes) and break (5 minutes) phases.
