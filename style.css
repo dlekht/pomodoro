@@ -1,0 +1,82 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: tomato;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+}
+
+#header{
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    color: hsla(0, 0%, 0%, 0.75);
+}
+
+#motivationalText{
+    font-size: 1.5em;
+    color: hsla(0, 0%, 0%, 0.75);
+}
+
+#timerContainer{
+    background-color: hsla(0, 0%, 100%, 0.3);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 400px;
+    min-width: 500px;
+    width: 600px;
+    height: 500px;
+    border-radius: 10px;
+    background-image: url(resources/tomato.png);
+    background-size: 380px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#session{
+    position: absolute;
+    bottom: 0;
+    left: 25px;
+    color: hsla(0, 0%, 0%, 0.7);
+}
+
+#timer{
+    font-family: 'Arial', sans-serif;
+    font-size: 8em;
+    text-align: center;
+    color: hsla(0, 0%, 0%, 0.7);
+    text-shadow: 3px 3px 3px tomato;
+    margin-bottom: 30px;
+}
+
+#buttonContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+button{
+    background-color: tomato;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    font-size: 2em;
+    box-shadow: 3px 3px 3px hsl(9, 85%, 39%);
+    cursor: pointer;
+}
+
+button:hover{
+    font-size: 2.2em;
+}
