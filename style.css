@@ -3,59 +3,73 @@
 }
 
 body{
-    background-color: tomato;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     height: 100vh;
     margin: 0;
+
+    background-color: tomato;
 }
 
 #header{
-    font-family: 'Arial', sans-serif;
     margin: 0;
     color: hsla(0, 0%, 0%, 0.75);
+    font-family: 'Arial', sans-serif;
 }
 
 #motivationalText{
-    font-size: 1.5em;
     color: hsla(0, 0%, 0%, 0.75);
+    font-size: 1.5em;
 }
 
-#timerContainer{
-    background-color: hsla(0, 0%, 100%, 0.3);
+#timerWindow{
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 10px;
-    min-height: 400px;
-    min-width: 500px;
-    width: 600px;
-    height: 500px;
+    height: 70%;
+    width: 90%;
+ 
     border-radius: 10px;
-    background-image: url(resources/tomato.png);
-    background-size: 380px;
+    background-color: hsla(0, 0%, 100%, 0.1);
+
+
+}
+
+#timerWindow::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--background-image, url('resources/tomato.png'));
+    background-size: contain;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center; 
+    z-index: -1;
+    border-radius: 10px;
 }
 
 #session{
     position: absolute;
-    bottom: 0;
-    left: 25px;
+    bottom: 5%;
+    left: 5%;
+    margin: 0;
     color: hsla(0, 0%, 0%, 0.7);
 }
 
 #timer{
+    margin-bottom: 5%;
+    color: hsla(0, 0%, 0%, 0.8);
+
     font-family: 'Arial', sans-serif;
-    font-size: 8em;
+    font-size: clamp(2em, 20vw, 8em);
     text-align: center;
-    color: hsla(0, 0%, 0%, 0.7);
     text-shadow: 3px 3px 3px tomato;
-    margin-bottom: 30px;
 }
 
 #buttonContainer{
@@ -67,16 +81,73 @@ body{
 }
 
 button{
-    background-color: tomato;
+    padding: 5% 10%;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
+    background-color: tomato;
+    box-shadow: 3px 3px 3px hsl(9, 85%, 39%);
+
     font-family: 'Arial', sans-serif;
     text-align: center;
-    font-size: 2em;
-    box-shadow: 3px 3px 3px hsl(9, 85%, 39%);
+    font-size: clamp(1em, 6vw, 2.5em);
+
     cursor: pointer;
 }
 
 button:hover{
     font-size: 2.2em;
 }
+
+@media (min-width: 480px){
+    #timerWindow {
+        width: 80%;
+      }
+}
+
+@media (min-width: 768px){
+    #timerWindow {
+        width: 80%;
+      }
+
+
+}
+
+@media (min-width: 1024px){
+    #timerWindow {
+        width: 50%;
+    }
+
+    #buttonContainer{
+        bottom: 20%;
+    }
+
+}
+
+@media (max-height:480px) and (orientation: landscape){
+    #timerWindow {
+        width: 70%;
+        height: 60%;
+
+        margin-bottom: 5%;
+        background-size: 70%;
+      }
+
+    #timer{
+        font-size: clamp(6em, 15vh, 8em);
+    }
+
+    #buttonContainer{
+        flex-direction: row;
+    }
+
+    #session{
+        font-size: 1.5em;
+        left: 1.5%;
+    }
+
+    button{
+        font-size: clamp(1.5em, 5vh, 2em);
+    }
+}
+
+

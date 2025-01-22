@@ -4,7 +4,7 @@ const resetBtn = document.getElementById("resetBtn");
 const buttonContainer = document.getElementById("buttonContainer");
 
 const timerDisplay = document.getElementById("timer");
-const timerContainer = document.getElementById("timerContainer");
+const timerWindow = document.getElementById("timerWindow");
 const pageDisplay = document.querySelector("body");
 const title = document.querySelector("title");
 const motivationalText = document.getElementById("motivationalText");
@@ -60,6 +60,8 @@ resetBtn.addEventListener("click", event => {
 
     displayTime();
     displayPhase();
+
+    startBtn.textContent = "Start";
 
     displayVisibility(startBtn, true);
     displayVisibility(pauseBtn, false);
@@ -123,8 +125,7 @@ function displayVisibility(element, shouldShow){
 function displayPhase(){
      if(isBreak){
         pageDisplay.style.backgroundColor = "aqua";
-        timerContainer.style.backgroundImage = "url(resources/sloth.png)";
-        timerDisplay.style.color = "hsla(0, 0%, 0%, 0.85)";
+        timerWindow.style.setProperty('--background-image', "url('resources/sloth.png')");
         timerDisplay.style.textShadow = "3px 3px 3px hsla(180, 100%, 50%, 0.5)";
         buttonContainer.style.marginBottom = "40px";
 
@@ -138,8 +139,7 @@ function displayPhase(){
 
     } else {
         pageDisplay.style.backgroundColor = "tomato";
-        timerContainer.style.backgroundImage = "url(resources/tomato.png)";
-        timerDisplay.style.color = "hsla(0, 0%, 0%, 0.7)";
+        timerWindow.style.setProperty('--background-image', "url('resources/tomato.png')");
         timerDisplay.style.textShadow = "3px 3px 3px tomato";
         buttonContainer.style.marginBottom = "0";
 
